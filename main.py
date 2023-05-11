@@ -1,6 +1,6 @@
 
 # read a file as lines
-data = open('D:\\repos\\itos_exp\\itos_exp3\\result.txt').readlines()
+data = open('/home/konqi/repos/itos_exp/itos_exp3/result.txt').readlines()
 # filter out empty lines
 data = [line.strip() for line in data if line.strip()]
 # split each line by ,
@@ -27,7 +27,7 @@ import matplotlib.pyplot as plt
 fig = plt.figure(figsize=(5, 3.5), dpi=600)
 ax = fig.add_subplot(111)
 
-for kind in groups:
+for kind in ['fifo','lru','opt']:
     ax.plot([x[0] for x in groups[kind]], [x[1] for x in groups[kind]], label=kind)
 
 ax.set_xlabel('Memory Size')
