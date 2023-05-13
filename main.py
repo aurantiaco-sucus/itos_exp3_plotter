@@ -1,3 +1,4 @@
+import datetime
 
 # read a file as lines
 data = open('/home/konqi/repos/itos_exp/itos_exp3/result.txt').readlines()
@@ -34,4 +35,5 @@ ax.set_xlabel('Memory Size')
 ax.set_ylabel('Hit count')
 ax.legend()
 
-fig.savefig('result.png', bbox_inches='tight')
+timestamp = datetime.datetime.now().strftime('%Y%m%d-%H%M%S')
+fig.savefig(f'result-{timestamp}.png', bbox_inches='tight')
